@@ -1,6 +1,7 @@
 pipeline {
-    agent { dockerfile true }
+    agent any
 
+    tools { nodejs "node" }
 
     stages {
         stage('Install dependencies') { 
