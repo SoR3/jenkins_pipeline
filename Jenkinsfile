@@ -1,10 +1,15 @@
 pipeline {
-    agent any
+    agent{
+         docker {
+            image 'node:14' 
+            args '-p 3000:3000' 
+        }
+    }
 
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
-                echo 'Hello World'
+                sh 'npm install'
             }
         }
     }
