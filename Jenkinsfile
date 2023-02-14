@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    tools {nodejs "node"}
+    tools { nodejs "node" }
     stages {
         stage("Cloning Git") {
             steps {
@@ -15,7 +15,7 @@ pipeline {
                 sh 'npm install' 
             }
         }
-        
+
         stage('Test') {
             steps {
                 sh 'node test'
